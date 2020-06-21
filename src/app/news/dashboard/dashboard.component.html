@@ -1,0 +1,36 @@
+<div class="p-grid">
+    
+    <div class="p-col-12 p-md-5 p-lg-5" style="margin-top:2%;">
+        <div  *ngFor="let article of articles | slice:0:10">
+            <a href={{article.url}} target="_blank">
+            <p-card class="news-card" header={{article.title}} subheader={{article.source.name}}  styleClass="ui-card-shadow">
+                <p-header>
+                    <img src="Card" src={{article.urlToImage}}>
+                </p-header>
+                <div>{{article.description}}</div>
+                <p-footer>
+                    
+                    <button pButton type="button" label="View More" icon="pi pi-eye" style="margin-right: .25em"></button>
+                   
+                </p-footer>
+            </p-card></a>
+    </div>
+    </div>
+    <div class="p-md-2 p-lg-2"></div>
+     <div class="p-col-12 p-md-5 p-lg-5" style="margin-top:2%;">
+        <div  *ngFor="let article of articles | slice:10:20">
+            <a href={{article.url}} target="_blank">
+            <p-card class="news-card" header={{article.title}} subheader={{article.source.name}}  styleClass="ui-card-shadow">
+                <p-header>
+                    <img src="Card" src={{article.urlToImage}}>
+                </p-header>
+                <div>{{article.description}}</div>
+                <p-footer>
+                    <button pButton type="button" label="View More" icon="pi pi-eye" style="margin-right: .25em"></button>
+                   
+                </p-footer>
+            </p-card></a>
+        </div>
+    </div>
+  
+</div>

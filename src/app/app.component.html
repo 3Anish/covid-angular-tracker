@@ -1,0 +1,14 @@
+<div class="topbar">
+  <h2 class="app_name">
+    <a href="#" >COVID-19 TRACKER</a>
+  </h2>
+  <ul class="topbar_menu">
+    <li ><a [routerLink]="['india']">India</a></li>
+    <li class="topbar-submenu"><a  [routerLink]="['world']">Advisories/Helpline</a></li>
+    <li class="topbar-submenu"><a  [routerLink]="['news']">News</a></li>
+  
+  </ul>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

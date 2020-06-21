@@ -1,0 +1,64 @@
+.total-status ::ng-deep .ui-card-header{
+    text-align: center;
+}
+.total-status ::ng-deep .ui-card-body{
+  padding:0.5em;
+}
+.total-status ::ng-deep .ui-card-content{
+    text-align: center;
+    color: mediumblue;
+    font-weight: 600;
+}
+.head{
+    padding: 0.5em;
+    font-weight: bolder;
+}
+.font-col{
+    color:white;
+}
+#graph-container{
+    height:700px;
+}
+/* ::ng-deep .links-tab{
+    padding:0.5em;
+    font-weight: bolder;
+    color:white;
+} */
+/* .card-container{
+    border:1px solid black;
+} */
+.total-status ::ng-deep .ui-card {
+    background-color: #8dcdff;
+    color: white;
+}
+.total-status ::ng-deep .ui-card:hover{
+    box-shadow: 0 0px 5px 0 rgba(0, 122, 217, 0.58),
+     0 1px 1px 0 rgba(0, 0, 0, 0.14),
+      0 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+}
+.links_tab{
+    padding:7%;
+}
+.links{
+    color:red;
+}
+.red-col{
+    color:red;
+}
+@media only screen and (max-width: 500px) {
+    .home_btn {
+        color:red;
+      margin-right:22% !important ;
+      cursor: pointer;
+   background-color: yellow;
+      font-weight: 700;
+    }
+  }
+  .home_btn{
+      color:red;
+    margin-right: 72% ;
+    font-weight: 700;
+    background-color: yellow;
+    cursor: pointer;
+  }

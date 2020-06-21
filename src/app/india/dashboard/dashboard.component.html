@@ -1,0 +1,112 @@
+  
+<!-- <zingchart-angular [config]="config" [height]="700"></zingchart-angular> -->
+
+<div class="main-div" >
+  
+  <div >
+    
+    <span class="red-col">{{lastUpdated | date:'medium'}}</span>
+ 
+  </div>
+ 
+   <div class="p-grid">
+    <div class="p-col-12 p-md-6 p-lg-3 card-container">
+      <p-card  class="total-status">
+        <p-header>
+          <div class="head">
+            Total Cases
+          </div>
+
+          </p-header>
+          {{allCasesTillNow}}
+         
+    </p-card>
+    </div>
+      <div class="p-col-12 p-md-6 p-lg-3 card-container">
+         <p-card class="total-status">
+          <p-header>
+            <div class="head">
+              Total Active Cases
+              
+            </div>
+
+            </p-header>
+           {{totalConfirmedCases}}
+      </p-card>
+    </div>
+      <div class="p-col-12 p-md-6 p-lg-3 card-container">
+        <p-card class="total-status">
+          <p-header>
+            <div class="head">
+              Cured/discharged cases
+            </div>
+
+            </p-header>
+            {{totalCuredCases}}
+      </p-card>
+      </div>
+      <div class="p-col-12 p-md-6 p-lg-3 card-container">
+        <p-card class="total-status">
+          <p-header>
+            <div class="head">
+              Total Death Cases
+            </div>
+
+            </p-header>
+            {{totalDeathCases}}
+      </p-card>
+      </div>
+     
+  </div>
+
+
+   <div class="graph-container" id="graph-container">
+   
+      <!-- <highcharts-chart
+     [Highcharts] = "highcharts" 
+     [options] = "options" 
+     style = "width: 100%; height: 100%; ">
+     </highcharts-chart> -->
+    
+   </div>
+<div>
+<p-table [columns]="cols"  [value]="tableData" [scrollable]="true"  >
+   <ng-template pTemplate="colgroup" let-columns>
+      <colgroup>
+          <col *ngFor="let col of columns" style="width:100px;">
+      </colgroup>
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th *ngFor="let col of columns">
+              {{col.header}}
+          </th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-values>
+   <tr>
+       <td>{{values.state_name}}</td>
+       <td>{{values.positive}}</td>
+       <!-- <td>{{values.confirmedForeign}}</td> -->
+       <td>{{values.cured}}</td>
+       <td>{{values.death}}</td>
+       
+   </tr>
+</ng-template>
+</p-table>
+</div>
+
+</div>
+<!-- <div>
+  <highcharts-chart
+    id="container" 
+    [Highcharts]="highcharts1"
+    [constructorType]="chartConstructor"
+    [options]="chartOptions"
+    [callbackFunction]="chartCallback"
+    [(update)]=updateFromInput
+    [oneToOne]="true"
+     style="width: 100%; height: 700px; display: block;">
+  </highcharts-chart>
+</div> -->
+

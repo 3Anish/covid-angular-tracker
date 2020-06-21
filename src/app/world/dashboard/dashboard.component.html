@@ -1,0 +1,115 @@
+
+ <div>
+    
+    <p-accordion>
+        <p-accordionTab header="Latest Updates">
+            <p-card class="header">
+                <div class="p-grid">
+                <div class="p-col-3 p-md-4 p-lg-4">
+                    <div style="font-weight: bolder;">Date</div>
+                </div>
+                <div class="p-col-9 p-md-8 p-lg-8">
+                    <div  style="font-weight: bolder;">
+                       Latest Updates
+                    </div>
+                </div>
+            </div>
+            </p-card>
+             <p-card class="data-part" *ngFor="let a of allDates let i=index">
+                <div class="p-grid">
+                    <div class="p-col-3 p-md-4 p-lg-4">
+                       
+                        <div  >{{a}}</div>
+                    </div>
+                    <div class="p-col-9 p-md-8 p-lg-8">
+                       <a href={{allLinks[i]}} target="_blank"> <div>
+                            {{allLinksText[i]}}
+                        </div></a>
+                    </div>
+                   
+                </div>
+             </p-card>
+             
+             <!-- <div *ngFor="let a of allDates let i=index">
+                 {{a}}
+                 {{allLinks[i]}}
+             </div> -->
+        </p-accordionTab>
+        <p-accordionTab header="Awareness Material">
+            <p-card class="header">
+                <div class="p-grid">
+             
+                <div class="p-col-12 p-md-12 p-lg-12">
+                    <div  style="font-weight: bolder;">
+                        Titles
+                    </div>
+                </div>
+            </div>
+            </p-card>
+             <p-card class="data-part" *ngFor="let a of allTitles let i=index">
+                <div class="p-grid">
+                   
+                    <div class="p-col-12 p-md-12 p-lg-12">
+                       <a href={{allTitlesLinks[i]}} target="_blank"> <div>
+                            {{a}}
+                        </div></a>
+                    </div>
+                   
+                </div>
+             </p-card>
+             
+             
+        </p-accordionTab>
+        
+    </p-accordion>
+ </div>
+ <div class="links_tab" style="text-align: center;" >
+    <p-card>
+   <div class="p-grid" style="background-color:#ffed75;">
+       <div class="p-col-3 p-md-3 p-lg-3" style="color:#b51714; font-weight: bolder;">
+           <span>Helpline Number</span>
+           <span>+91-11-23978046</span>
+       </div>
+       <div class="p-col-2 p-md-3 p-lg-3" style="color:#b51714; font-weight: bolder;">
+        <span>Toll Free :</span>
+        <span>1075</span>
+    </div>
+    <div class="p-col-4 p-md-3 p-lg-3" style="color:#b51714; font-weight: bolder;">
+        <span>Helpline Email Id</span>
+        <span>ncov2019@gov.in</span>
+    </div>
+    <div class="p-col-3 p-md-3 p-lg-3" style="color:#b51714; font-weight: bolder;">
+        <span>Arogya Setu<span><img src="../../../assets/arogya.png" width="14px"></span> App</span>
+        <span>
+            <a href="http://bit.ly/AarogyaSetu_PS" target="_BLANK" title="For Android">
+            <img src="../../../assets/android.png" alt="android" 
+            width="14px" style="margin-right: 2px;">
+         </a>
+        </span>
+        <span>
+            <a href="https://apple.co/2X1KMzO" target="_BLANK" title="For iPhone">
+            <img src="../../../assets/apple.png" alt="apple" width="14px" >
+            </a>
+        </span>
+    </div>
+   </div>
+    <div style="padding: 10px;">
+     
+      <a href={{helplineLink}} target="_blank" > <span>HelpLine Contact Numbers StateWise</span></a>
+    </div>
+   <!-- <div style="padding: 10px;">
+   
+     <a href={{districtWiseCases}} target="_blank"><span>District Wise Cases</span></a>
+   </div> -->
+   <!-- <div style="padding: 10px;">
+  
+     <a href={{socialAdvisoryLink}} target="_blank"> <span>Advisory on Social Distancing</span></a>
+   </div> -->
+  <div style="padding: 10px;">
+   
+     <a href={{faqLink}} target="_blank"><span>FAQ on COVID-19</span></a>
+   </div>
+</p-card>
+
+ </div>
+ 
