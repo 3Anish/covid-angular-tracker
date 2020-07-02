@@ -17,59 +17,9 @@ import { IndiaService } from '../india.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-   //map highchart code
-   // state_names:any=[
-   //    ["Andhra Pradesh"],
-   //    ["Andaman and Nicobar Islands"],
-   //    ["Arunachal Pradesh"],
-   //    ["Assam"],
-   //    ['bihar', 4],
-   //    ['lakshadweep', 5],
-   //    ['andaman and nicobar', 6],
-   //    ['assam', 7],
-   //    ['west bengal', 8],
-   //    ['puducherry', 9],
-   //    ['daman and diu', 10],
-   //    ['gujarat', 11],
-   //    ['rajasthan', 12],
-   //    ['dadra and nagar haveli', 13],
-   //    ['chhattisgarh', 14],
-   //    ['tamil nadu', 15],
-   //    ['chandigarh', 16],
-   //    ['punjab', 17],
-   //    ['haryana', 18],
-   //    ['andhra pradesh', 19],
-   //    ['maharashtra', 20],
-   //    ['himachal pradesh', 21],
-   //    ['meghalaya', 22],
-   //    ['kerala', 23],
-   //    ['telangana', 24],
-   //    ['mizoram', 25],
-   //    ['tripura', 26],
-   //    ['manipur', 27],
-   //    ['arunanchal pradesh', 28],
-   //    ['jharkhand', 29],
-   //    ['goa', 30],
-   //    ['delhi', 31],
-   //    ['odisha', 32],
-   //    ['jammu and kashmir', 33],
-   //    ['sikkim', 34],
-   //    ['uttarakhand', 35]
-  
-   // ].map(x=>x[0].toString().toUpperCase());
-    
-  
-   // chart;
-   // data.map(x=>console.log(x));
-   
-   // updateFromInput = false;
-   // highcharts1:any;
-   // chartConstructor = "mapChart";
-   // chartCallback;
-  
-   //map highchart code
+
+ 
    tableData: any;
-   
    cols: { field: string; header: string; }[];
    totalCases: any=[];
    totalCuredCases: any;
@@ -85,11 +35,31 @@ export class DashboardComponent implements OnInit {
    totalPassengersScreendAirport: any;
    allCasesTillNow: any;
    states:any=[];
-  totalConfirmedCasesIndians=[];
-    totalConfirmedCasesForeigns=[];
-    curedCases=[];
-    deathCases=[];
+   totalConfirmedCasesIndians=[];
+   totalConfirmedCasesForeigns=[];
+   curedCases=[];
+   deathCases=[];
    totalConfirmedCases: any;
+   todayPositiveCases: number;
+   todayCuredCases: number;
+   todayDeathCases: number;
+   _listFilter = '';
+   filteredList: any=[];
+   get listFilter(): string {
+      return this._listFilter;
+    }
+    set listFilter(value: string) {
+      this._listFilter = value;
+      console.log(this._listFilter);
+      this.filteredList = this.listFilter ? this.performFilter(this.listFilter) : this.tableData;
+     
+    }
+    performFilter(filterBy: string): any {
+      console.log(filterBy);
+      filterBy = filterBy.toLocaleLowerCase();
+      return this.tableData.filter((state: any) =>
+      state.state_name.toLocaleLowerCase().indexOf(filterBy) !== -1);
+   }
  
   
   constructor(private indiaService:IndiaService) {
@@ -122,6 +92,7 @@ export class DashboardComponent implements OnInit {
       });
     
       this.tableData=data;
+      this.filteredList=data;
      
       
       this.curedCases=this.curedCases.map(Number);
@@ -137,16 +108,7 @@ export class DashboardComponent implements OnInit {
          Highcharts.chart('graph-container', this.options);
           this.highcharts = Highcharts;
          
-         //  for(var i=0;i<this.tableData.length;i++){
-         //        this.chartOptions.series[i]['name']=this.states;
-         //        this.chartOptions.series[i]['data']=this.totalCases;
-         //  }
-         //  data.find(x=>console.log(typeof x.state_name.toUpperCase()));
-         // let result=[];
-         // Highcharts1.chart('container',this.chartOptions)
-         // this.highcharts1 = Highcharts1;
-         //   console.log(data.find(x=>x.state_name.toUpperCase()===this.state_names));
-        //  console.log(result);
+
    },
     (error) => {
       this.statusMessage =
@@ -157,6 +119,13 @@ export class DashboardComponent implements OnInit {
    .then((data)=>{
      // this.tableData=data;
      this.allCasesTillNow=data[37].new_positive;
+     this.totalConfirmedCases=data[37].new_active;
+     this.totalCuredCases=data[37].new_cured;
+     this.totalDeathCases=data[37].new_death;
+     this.todayPositiveCases=this.allCasesTillNow-data[37].positive;
+     this.todayCuredCases=this.totalCuredCases-data[37].cured;
+     this.todayDeathCases=this.totalDeathCases-data[37].death;
+
    },
     (error) => {
       this.statusMessage =
@@ -164,30 +133,7 @@ export class DashboardComponent implements OnInit {
       console.error(error);
    })
 
-   this.indiaService.getTotalConfirmedCases()
-   .then((data)=>{
-      this.totalConfirmedCases=data.totalCasesInIndia;
-      this.totalCuredCases=data.totalCured;
-      this.totalDeathCases=data.totalDeaths;
-      this.lastUpdated=data.lastUpdated;
-      this.totalPassengersScreendAirport=data.totalPassengersScreendAirport;
-   }, (error) => {
-         this.statusMessage =
-               'Problem with the service. Please try again after sometime';
-         console.error(error);
-      });
-    this.indiaService.getOtherLinks()
-   .then((data)=>{
-      this.districtWiseCases=data.districtWiseCases;
-      this.helplineLink=data.helplineLink;
-      this.faqLink=data.faqLink;
-      this.socialAdvisoryLink=data.socialAdvisoryLink;
-   }, (error) => {
-         this.statusMessage =
-               'Problem with the service. Please try again after sometime';
-         console.error(error);
-      });
-   
+  
  
       
 

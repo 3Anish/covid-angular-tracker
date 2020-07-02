@@ -1,115 +1,279 @@
-
- <div>
-    
-    <p-accordion>
-        <p-accordionTab header="Latest Updates">
-            <p-card class="header">
-                <div class="p-grid">
-                <div class="p-col-3 p-md-4 p-lg-4">
-                    <div style="font-weight: bolder;">Date</div>
-                </div>
-                <div class="p-col-9 p-md-8 p-lg-8">
-                    <div  style="font-weight: bolder;">
-                       Latest Updates
-                    </div>
-                </div>
-            </div>
-            </p-card>
-             <p-card class="data-part" *ngFor="let a of allDates let i=index">
-                <div class="p-grid">
-                    <div class="p-col-3 p-md-4 p-lg-4">
-                       
-                        <div  >{{a}}</div>
-                    </div>
-                    <div class="p-col-9 p-md-8 p-lg-8">
-                       <a href={{allLinks[i]}} target="_blank"> <div>
-                            {{allLinksText[i]}}
-                        </div></a>
-                    </div>
-                   
-                </div>
-             </p-card>
-             
-             <!-- <div *ngFor="let a of allDates let i=index">
-                 {{a}}
-                 {{allLinks[i]}}
-             </div> -->
-        </p-accordionTab>
-        <p-accordionTab header="Awareness Material">
-            <p-card class="header">
-                <div class="p-grid">
-             
-                <div class="p-col-12 p-md-12 p-lg-12">
-                    <div  style="font-weight: bolder;">
-                        Titles
-                    </div>
-                </div>
-            </div>
-            </p-card>
-             <p-card class="data-part" *ngFor="let a of allTitles let i=index">
-                <div class="p-grid">
-                   
-                    <div class="p-col-12 p-md-12 p-lg-12">
-                       <a href={{allTitlesLinks[i]}} target="_blank"> <div>
-                            {{a}}
-                        </div></a>
-                    </div>
-                   
-                </div>
-             </p-card>
-             
-             
-        </p-accordionTab>
-        
-    </p-accordion>
- </div>
- <div class="links_tab" style="text-align: center;" >
-    <p-card>
-   <div class="p-grid" style="background-color:#ffed75;">
-       <div class="p-col-3 p-md-3 p-lg-3" style="color:#b51714; font-weight: bolder;">
-           <span>Helpline Number</span>
-           <span>+91-11-23978046</span>
-       </div>
-       <div class="p-col-2 p-md-3 p-lg-3" style="color:#b51714; font-weight: bolder;">
+<div class="links_tab" style="text-align: center;">
+  <p-card>
+    <div class="p-grid" style="background-color: #ffed75;">
+      <div
+        class="p-col-12 p-md-6 p-lg-3"
+        style="color: #b51714; font-weight: bolder;"
+      >
+        <span>Helpline Number : </span>
+        <span class="values">+91-11-23978046</span>
+      </div>
+      <div
+        class="p-col-12 p-md-6 p-lg-3"
+        style="color: #b51714; font-weight: bolder;"
+      >
         <span>Toll Free :</span>
-        <span>1075</span>
-    </div>
-    <div class="p-col-4 p-md-3 p-lg-3" style="color:#b51714; font-weight: bolder;">
-        <span>Helpline Email Id</span>
-        <span>ncov2019@gov.in</span>
-    </div>
-    <div class="p-col-3 p-md-3 p-lg-3" style="color:#b51714; font-weight: bolder;">
-        <span>Arogya Setu<span><img src="../../../assets/arogya.png" width="14px"></span> App</span>
+        <span class="values">1075</span>
+      </div>
+      <div
+        class="p-col-12 p-md-6 p-lg-3"
+        style="color: #b51714; font-weight: bolder;"
+      >
+        <span>Helpline Email ID : </span>
+        <span class="values">ncov2019@gov.in</span>
+      </div>
+      <div
+        class="p-col-12 p-md-6 p-lg-3"
+        style="color: #b51714; font-weight: bolder;"
+      >
+        <span
+          >Arogya Setu<span
+            ><img src="../../../assets/arogya.png" width="14px"
+          /></span>
+          App</span
+        >
         <span>
-            <a href="http://bit.ly/AarogyaSetu_PS" target="_BLANK" title="For Android">
-            <img src="../../../assets/android.png" alt="android" 
-            width="14px" style="margin-right: 2px;">
-         </a>
+          <a
+            href="http://bit.ly/AarogyaSetu_PS"
+            target="_BLANK"
+            title="For Android"
+          >
+            <img
+              src="../../../assets/android.png"
+              alt="android"
+              width="14px"
+              style="margin-right: 2px;"
+            />
+          </a>
         </span>
         <span>
-            <a href="https://apple.co/2X1KMzO" target="_BLANK" title="For iPhone">
-            <img src="../../../assets/apple.png" alt="apple" width="14px" >
-            </a>
+          <a href="https://apple.co/2X1KMzO" target="_BLANK" title="For iPhone">
+            <img src="../../../assets/apple.png" alt="apple" width="14px" />
+          </a>
         </span>
+      </div>
     </div>
-   </div>
+    <div style="padding: 10px;">
+    
+      <a
+        href="https://www.mohfw.gov.in/pdf/StatewiseCovidHospitalslink19062020.pdf"
+        target="_blank"
+      >
+        <span><i class="pi pi-external-link"></i> Covid-19 facilities in States & Union Territories</span></a
+      >
+    </div>
     <div style="padding: 10px;">
      
-      <a href={{helplineLink}} target="_blank" > <span>HelpLine Contact Numbers StateWise</span></a>
+      <a href="https://www.mohfw.gov.in/pdf/FAQ.pdf" target="_blank"><span> <i class="pi pi-external-link"></i> FAQ on COVID-19</span></a>
     </div>
-   <!-- <div style="padding: 10px;">
-   
-     <a href={{districtWiseCases}} target="_blank"><span>District Wise Cases</span></a>
-   </div> -->
-   <!-- <div style="padding: 10px;">
-  
-     <a href={{socialAdvisoryLink}} target="_blank"> <span>Advisory on Social Distancing</span></a>
-   </div> -->
-  <div style="padding: 10px;">
-   
-     <a href={{faqLink}} target="_blank"><span>FAQ on COVID-19</span></a>
-   </div>
-</p-card>
+  </p-card>
+</div>
 
- </div>
- 
+<div class="advisory-links">
+  <div style="background-color: #f6f6f6; padding:10px; font-weight: 700;">Advisory Links</div>
+   <p-card class="data-part">
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/2ndNBTCGuidanceinLightofCOVID19Pandemic.pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            Second Interim National Guidance to Blood Transfusion Services in
+            India in light of Covid-19 pandemic, 25th June 2020</span
+          >
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/ClinicalManagementProtocolforCOVID19dated27062020.pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>Clinical Management Protocol for COVID-19</span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/updatedAdvisoryformanagingHealthcareworkersworkinginCOVIDandNonCOVIDareasofthehospital.pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span
+            >Updated Advisory for managing Health care workers working in COVID
+            and Non-COVID areas of the hospital</span
+          >
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a
+        href="https://www.youtube.com/watch?v=8I5xaKLhwBE&feature=youtu.be"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            Video on Addressing Psychosocial Concerns of Healthcare Workers
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/Illustrativeguidelineupdate.pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            An Illustrative Guide on COVID Appropriate Behaviours
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a href="https://www.youtube.com/watch?v=nG2wUimnSSk" target="_blank">
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            A/V on "Quit using spit as it can increase the risk of spread of
+            COVID-19" (English)
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/GuidetoaddressstigmaassociatedwithCOVID19.pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            Guide to address stigma associated with COVID-19
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a href="https://www.youtube.com/watch?v=5ZS6Hp6TK60" target="_blank">
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            A/V on "Quit using spit as it can increase the risk of spread of
+            COVID-19" (Hindi)
+          </span>
+        </div>
+      </a>
+    </div>
+  </p-card>
+</div>
+<div class="travel-links">
+  <div style="background-color: #f6f6f6; padding:10px; font-weight: 700;">Travel Advisory Links</div>
+   <p-card class="data-part">
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/Guidelinesforinternationalarrivals.pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            Guidelines for international arrivals
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/Guidelinesfordomestictravel(airortrainorinter-statebustravel).pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>Guidelines for domestic travel (air/train/inter-state bus travel)</span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/DGSOrder04of2020.pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span
+            >Instructions to all major and minor ports for dealing with(COVID-19)</span
+          >
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/Traveladvisory.pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            Additional Travel Advisory
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/SOPQuarantineofPassengers.pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            Standard Operating Procedure for Passenger Movement post Disembarkation
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a href="https://www.mohfw.gov.in/pdf/NewinstructionsDt14032020Restirctiononinternationalpassengertraffic.pdf" target="_blank">
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            Restrictions on International passenger traffic through Land Check Posts
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a
+        href="https://www.mohfw.gov.in/pdf/ConsolidatedTraveladvisoryUpdated11032020.pdf"
+        target="_blank"
+      >
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            Consolidated Travel Advisory - 11 March 2020
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="external-links">
+      <a href="https://www.mohfw.gov.in/pdf/VisarestrictionsrelatedtoCOVID19Ministries.pdf" target="_blank">
+        <div>
+          <span><i class="pi pi-external-link"></i></span>
+          <span>
+            Visa restrictions issued by Bureau of Immigration (BOI) after meeting of GoM on COVID19 - 11 March 2020
+          </span>
+        </div>
+      </a>
+    </div>
+  </p-card>
+</div>
+
+

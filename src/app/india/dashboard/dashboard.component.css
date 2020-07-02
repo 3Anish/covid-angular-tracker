@@ -2,12 +2,15 @@
     text-align: center;
 }
 .total-status ::ng-deep .ui-card-body{
-  padding:0.5em;
+  padding:0px ;
 }
 .total-status ::ng-deep .ui-card-content{
     text-align: center;
     color: mediumblue;
     font-weight: 600;
+}
+.state-card ::ng-deep .ui-card-body{
+    padding:0px;
 }
 .head{
     padding: 0.5em;
@@ -19,14 +22,17 @@
 #graph-container{
     height:700px;
 }
-/* ::ng-deep .links-tab{
-    padding:0.5em;
-    font-weight: bolder;
-    color:white;
-} */
-/* .card-container{
-    border:1px solid black;
-} */
+.state_list{
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(370px,1fr));
+    /* grid-column-gap:20px; */
+    grid-auto-rows: 150px;
+    grid-auto-columns: 150px;
+    grid-gap:1em;
+}
+
 .total-status ::ng-deep .ui-card {
     background-color: #8dcdff;
     color: white;
@@ -40,25 +46,48 @@
 .links_tab{
     padding:7%;
 }
-.links{
-    color:red;
+
+.card-header{
+    padding: 10px 10px;
+    background-color: lightcoral;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: darkorchid;
 }
-.red-col{
-    color:red;
+.card-data{
+    padding:15px 10px;
 }
-@media only screen and (max-width: 500px) {
-    .home_btn {
-        color:red;
-      margin-right:22% !important ;
-      cursor: pointer;
-   background-color: yellow;
-      font-weight: 700;
-    }
-  }
-  .home_btn{
-      color:red;
-    margin-right: 72% ;
-    font-weight: 700;
-    background-color: yellow;
-    cursor: pointer;
-  }
+.row-data{
+    margin-bottom: 5px;
+    display: flex;
+    justify-content:space-between;
+}
+.head-gap{
+    margin-right: 20px;
+}
+.not-moving{
+  background-color:#ff4000;
+  color:white;
+  padding:10px;
+}
+.search_block{
+    padding:15px;
+}
+.block-card{
+    display:flex;
+    flex-wrap:wrap;
+}
+.input_value{
+    display: block;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+  
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

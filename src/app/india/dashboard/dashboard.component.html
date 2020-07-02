@@ -1,15 +1,6 @@
-  
-<!-- <zingchart-angular [config]="config" [height]="700"></zingchart-angular> -->
 
-<div class="main-div" >
-  
-  <div >
-    
-    <span class="red-col">{{lastUpdated | date:'medium'}}</span>
  
-  </div>
- 
-   <div class="p-grid">
+   <div class="p-grid block-card">
     <div class="p-col-12 p-md-6 p-lg-3 card-container">
       <p-card  class="total-status">
         <p-header>
@@ -58,19 +49,56 @@
       </div>
      
   </div>
+  <div class="not-moving">
+    <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+      <div class="today-data">
+        <span>Today's Positive Cases : </span>
+        <span class="head-gap">{{todayPositiveCases}}</span>
+
+        <span>Today's Cured Cases : </span>
+        <span class="head-gap">{{todayCuredCases}}</span>
+
+        <span>Today's Death Cases : </span>
+        <span class="head-gap">{{todayDeathCases}}</span>
+
+      </div>
+    </marquee>
+  </div>
 
 
    <div class="graph-container" id="graph-container">
-   
-      <!-- <highcharts-chart
-     [Highcharts] = "highcharts" 
-     [options] = "options" 
-     style = "width: 100%; height: 100%; ">
-     </highcharts-chart> -->
-    
    </div>
-<div>
-<p-table [columns]="cols"  [value]="tableData" [scrollable]="true"  >
+
+   <div class="search_block">
+   <input type="text" placeholder="Search By State" class="input_value" [(ngModel)]="listFilter"/>
+  </div>
+
+    <div class="state_list">
+        <div  *ngFor="let state of filteredList">
+          <p-card class="state-card"  styleClass="ui-card-shadow">
+          <div class="card-header">
+              {{state.state_name}}
+          </div>
+          <div class="card-data">
+              <div class="row-data">
+                <span>Total Confirmed Cases  </span>
+                <span>{{state.positive}}</span>
+              </div>
+              <div class="row-data">
+                <span>Total Cured Cases  </span>
+                <span>{{state.cured}}</span>
+              </div>
+              <div class="row-data">
+                <span>Total Death Cases  </span>
+                <span>{{state.death}}</span>
+              </div>
+          </div>
+          
+          </p-card>
+        </div>
+      </div>
+ 
+<!-- <p-table [columns]="cols"  [value]="tableData" [scrollable]="true"  >
    <ng-template pTemplate="colgroup" let-columns>
       <colgroup>
           <col *ngFor="let col of columns" style="width:100px;">
@@ -87,16 +115,13 @@
    <tr>
        <td>{{values.state_name}}</td>
        <td>{{values.positive}}</td>
-       <!-- <td>{{values.confirmedForeign}}</td> -->
        <td>{{values.cured}}</td>
        <td>{{values.death}}</td>
        
    </tr>
 </ng-template>
-</p-table>
-</div>
+</p-table> -->
 
-</div>
 <!-- <div>
   <highcharts-chart
     id="container" 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {FormsModule} from '@angular/forms';
 import { IndiaRoutingModule } from './india-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from 'app/material/material.module';
@@ -16,8 +16,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
   imports: [
     CommonModule,
     MaterialModule,
+    FormsModule,
     HighchartsChartModule,
-   IndiaRoutingModule
+    IndiaRoutingModule
   ]
 })
 export class IndiaModule { }

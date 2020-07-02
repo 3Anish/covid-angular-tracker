@@ -6,5 +6,26 @@
 .news-card ::ng-deep .ui-card-shadow.ui-card.ui-widget.ui-widget-content {
     margin-bottom: 15px;
 }
+.box-container{
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   /* display: grid;
+   grid-template-columns: repeat(auto-fit,minmax(45%,1fr));
+   grid-gap:1em;
+   justify-items: stretch;
+   align-items: stretch; */
+
+
+}
+.box-1{
+    flex: 1;
+    margin-right: 3%;
+    
+}
+.box-2{
+    flex: 1;
+  
+}
 
