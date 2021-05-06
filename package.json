@@ -25,7 +25,7 @@
     "cheerio": "^1.0.0-rc.3",
     "concurrently": "^4.1.2",
     "express": "^4.17.1",
-    "highcharts": "^8.0.4",
+    "highcharts": "^9.0.0",
     "highcharts-angular": "^2.4.0",
     "nodemon": "^2.0.3",
     "primeflex": "^1.0.0",
